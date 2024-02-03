@@ -1,0 +1,23 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black
+}
+#grid-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 510px;
+    border: 2px solid black;
+    gap: 1px
+
+}
+.grid-item {
+    flex: 1px;
+    min-width:50px;
+    min-height: 50px;
+    background-color: blue;
+}
