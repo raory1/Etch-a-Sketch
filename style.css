@@ -4,20 +4,26 @@ main{
     align-items: center;
     border: 2px solid black
 }
+
 #grid-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 500px;
-    height: 510px;
+    width: 640px;
+    height: 640px;
     border: 2px solid black;
-    gap: 1px
+    gap: 0px
 
 }
 .grid-item {
     flex: 1px;
-    min-width:50px;
-    min-height: 50px;
-    background-color: blue;
+    min-width:10px;
+    min-height: 10px;
+    background-color: #e8e8e8;
+}
+
+button{
+    width: 100px;
+    height: 50px;
 }
