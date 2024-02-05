@@ -3,32 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etch a Sketch</title>
+    <title>Etch-a-Sketch</title>
+    <link rel="icon" href="./assets/icon.jpg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <script src="script.js" defer></script>
     <header>
-        <div>
-            <h1>Etch a Sketch</h1>
+        <div id="cabecalho">
+            <div id="cabecalho-links">
+                <img src="./assets/icon.jpg">
+                <a href="#">HOME</a>
+                <a href="#">ABOUT ME</a>
+                <a href="#">NEWS</a>
+                <a href="#">CONTACT</a>
+            </div>
+            <div id="theme">
+                <input type="checkbox" id="change-theme"/>
+                <label for="change-theme" class="switch">
+                    <img class="slider" id='theme-icon' src="./assets/sun.svg">
+                </label>
+            </div>
         </div>
     </header>
 
     <main>
+        <div id="title">
+            <h1>ETCH-A-SKETCH</h1>
+        </div>
         <div>
-            <div id="grid-box"></div>
-            <div>
-                <button id="btn-rgb">RGB</button>
-                <button id="btn-progressive-black">CINZA</button>
-                <button id="btn-black">PRETO</button>
-                <button id="btn-clear">clear</button>
+            <div id="game-container">
+                <div id="options">
+                    <button class="option-btn" id="btn-rgb"><img src="./assets/pencil-rainbow.png"></button>
+                    <button class="option-btn" id="btn-progressive-black"><img src="./assets/pencil-progressive-black.png"></button>
+                    <button class="option-btn" id="btn-black"><img src="./assets/pencil-black.png"></button>
+                    <button class="option-btn" id="btn-eraser"><img src="./assets/eraser.svg"></button>
+                    <hr class="hr">
+                    <button class="option-btn" id="btn-clear"><img src="./assets/trash.svg"></button>
+                </div>
+                <div id="grid-box"></div>
             </div>
+        </div>
+
+        <div id="radio-container">
+            <input type="radio">
+            <input type="radio">
+            <input type="radio">
+            <input type="radio">
         </div>
         
     </main>
 
-    <footer>
 
+    <footer>
+        <a href="https://github.com/raory1"><img id="sgv-icon" src="./assets/github.svg">/raory1</a>
     </footer>
 </body>
 </html>

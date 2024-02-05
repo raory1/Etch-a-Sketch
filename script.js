@@ -4,6 +4,7 @@ const parent = document.querySelector("#grid-box")
 const btnRgb = document.querySelector("#btn-rgb")
 const btnBlack = document.querySelector("#btn-black")
 const btnProgressiveBlack = document.querySelector("#btn-progressive-black")
+const btnEraser = document.querySelector("#btn-eraser")
 const btnClear = document.querySelector("#btn-clear")
 randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 
@@ -24,9 +25,13 @@ function paintBlack(){
     return `rgb(0,0,0)`
 }
 
+function eraser(){
+    return `rgb(255,255,255)`
+}
+
 function clearScreen() {
     document.querySelectorAll(".grid-item").forEach((child) =>
-    child.style.backgroundColor = "#e8e8e8"
+    child.style.backgroundColor = "#FFFFFF"
 )}
 
 for (let i = 0; i<4096; i++){
@@ -45,12 +50,15 @@ btnProgressiveBlack.addEventListener('click', ()=> {
     opacity = 0.0
     colorType = 1})
 btnBlack.addEventListener('click', ()=>colorType = 2)
+btnEraser.addEventListener('click', ()=>colorType = 3)
 btnClear.addEventListener('click', ()=>this.clearScreen())
 function changeColor(child) {
     if(colorType == 0)
         child.style.backgroundColor = paintRandomRGB();
     else if(colorType == 1)
         child.style.backgroundColor = paintProgressiveBlack();
-    else 
+    else if(colorType == 2)
         child.style.backgroundColor = paintBlack();
+    else if(colorType == 3)
+        child.style.backgroundColor = eraser();
 }
