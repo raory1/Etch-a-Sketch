@@ -7,7 +7,7 @@ const btnBlack = document.querySelector("#btn-black")
 const btnProgressiveBlack = document.querySelector("#btn-progressive-black")
 const btnEraser = document.querySelector("#btn-eraser")
 const btnClear = document.querySelector("#btn-clear")
-const rangeGridSizeElement = document.querySelector("#grid-size")
+const rangeGridSizeElement = document.querySelector("#range-input-grid-size")
 let gridSize = rangeGridSizeElement.value
 
 
@@ -65,6 +65,7 @@ function updateItemSize() {
 }
 
 createGrids()
+
 rangeGridSizeElement.addEventListener('mouseup', updateItemSize)
 //change color
 let colorType = 0
