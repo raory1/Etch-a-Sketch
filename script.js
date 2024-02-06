@@ -61,7 +61,7 @@ function updateItemSize() {
     deleteGrids()
     createGrids()
 
-    rootElement.style.setProperty('--item-size', `calc(640px / ${gridSize})`);
+    rootElement.style.setProperty('--item-size', `calc(600px / ${gridSize})`);
 }
 
 createGrids()
