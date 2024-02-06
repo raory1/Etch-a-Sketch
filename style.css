@@ -147,9 +147,14 @@ main{
     justify-content: center;
     align-items: center;
     gap: 24px;
+    width: 100vh;
 }
 
 #options {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,8 +182,6 @@ main{
     height: 40px;
 }
 
-
-
 #grid-box {
     display: flex;
     flex-wrap: wrap;
@@ -188,7 +191,6 @@ main{
     height: 640px;
     gap: 0px;
     box-shadow: var(--shadow);
-
 }
 
 .grid-item {
@@ -204,10 +206,16 @@ button{
     border-radius: 16px;
 }
 
+#range-container {
+    width: 640px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-
-
-
+#range-input-grid-size {
+    width: 100%
+}
 
 footer {
     display: flex;

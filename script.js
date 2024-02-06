@@ -1,5 +1,6 @@
 // 54 = 9 x 9
 // 
+const rootElement = document.documentElement;
 const parent = document.querySelector("#grid-box")
 const btnRgb = document.querySelector("#btn-rgb")
 const btnBlack = document.querySelector("#btn-black")
@@ -7,8 +8,7 @@ const btnProgressiveBlack = document.querySelector("#btn-progressive-black")
 const btnEraser = document.querySelector("#btn-eraser")
 const btnClear = document.querySelector("#btn-clear")
 const rangeGridSizeElement = document.querySelector("#grid-size")
-const rootElement = document.documentElement;
-let gridSize = 32
+let gridSize = rangeGridSizeElement.value
 
 
 randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
@@ -40,11 +40,13 @@ function clearScreen() {
 )}
 
 // ?
-function updateItemSize() {
+function deleteGrids() {
     document.querySelectorAll(".grid-item").forEach((child) => {
         parent.removeChild(child)
     })
+}
 
+function createGrids() {
     gridSize = (parseInt(rangeGridSizeElement.value))
     for (let i = 0; i<(gridSize*gridSize); i++){
         const grid = document.createElement("div");
@@ -53,12 +55,16 @@ function updateItemSize() {
     } 
     document.querySelectorAll(".grid-item").forEach((child) =>
     child.addEventListener("mouseover", () => changeColor(child)))
-    rootElement.style.setProperty('--item-size', `calc(640px / ${gridSize})`);
-    console.log(gridItemSize)
 }
 
+function updateItemSize() {
+    deleteGrids()
+    createGrids()
 
+    rootElement.style.setProperty('--item-size', `calc(640px / ${gridSize})`);
+}
 
+createGrids()
 rangeGridSizeElement.addEventListener('mouseup', updateItemSize)
 //change color
 let colorType = 0
