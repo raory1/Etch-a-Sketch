@@ -26,7 +26,7 @@ time, mark, audio, video {
     --text-color: #383d66;
     --secondary-color: #F13F3E;
     --shadow: 0px 3px 6px 0px rgba(140, 149, 159, 0.15);
-    --item-size: 10px
+    --item-size: 9.375px
 }
 
 body{
@@ -209,6 +209,7 @@ button{
 #range-container {
     width: 100vw;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -230,6 +231,21 @@ button{
     border-radius: 50%;
     background-color: var(--text-color);
     box-shadow: var(--shadow)
+}
+
+.range-options {
+    width: 600px;
+    height: 8px;
+    padding: 8px;
+    margin: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.range-options option, span {
+    padding: 0px;
+    font-size: 16px;
 }
 
 footer {
