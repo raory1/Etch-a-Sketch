@@ -1,8 +1,185 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --background-color: #E8E8E8;
+    --text-color: #383d66;
+    --secondary-color: #F13F3E;
+    --shadow: 0px 3px 6px 0px rgba(140, 149, 159, 0.15);
+    --item-size: 10px
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    background-image: url('./assets/girl2.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    transition: all .5s ease-in-out;
+}
+
+header{
+    padding: 16px 100px 16px 100px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hr {
+	border: 1px solid #757BA6;
+    border-left: 56px solid #757BA6;
+}
+
+#cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+#cabecalho img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#cabecalho-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 61px;
+}
+
+#cabecalho-links a{
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 1px;
+    background-image: linear-gradient(var(--text-color), var(--text-color));
+    background-size: 0% 0.15em;
+    background-position-y: 100%;
+    background-position-x: 0%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
+}
+
+#cabecalho-links a:hover{
+    background-size: 100% 0.15em; 
+}
+
+#theme{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#change-theme {
+    display: none;
+}
+
+.switch{
+    position: relative;
+    background-color: var(--text-color);
+    width: 72px;
+    height: 32px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+#theme-icon.slider {
+    position: absolute;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    transition: all .5s ease-in-out;
+    width: 24px;
+    height: 24px;
+    padding: 5px;
+}
+
+#change-theme:checked ~ .switch {
+    background-color: var(--text-color);
+}
+
+#change-theme:checked ~ .switch .slider {
+    transform: translateX(36px);
+}
+
 main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--text-color);
+    padding: 16px;
+}
+
+#title {
+    font-size: 80px;
+    font-weight: 100;
+}
+#game-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black
+    gap: 24px;
+    width: 100vh;
+}
+
+#options {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 104px;
+    height: 400px;
+    gap: 24px;
+    background-color: #383d66;
+    border-radius: 40px;
+}
+
+.option-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: none;
+}
+
+.option-btn img {
+    width: 40px;
+    height: 40px;
 }
 
 #grid-box {
@@ -12,18 +189,51 @@ main{
     align-items: center;
     width: 640px;
     height: 640px;
-    border: 2px solid black;
-    gap: 0px
-
+    gap: 0px;
+    box-shadow: var(--shadow);
 }
+
 .grid-item {
-    flex: 1px;
-    min-width:10px;
-    min-height: 10px;
-    background-color: #e8e8e8;
+    flex: 0 0 var(--item-size);
+    min-width: var(--item-size);
+    min-height: var(--item-size);
+    background-color: #ffffff;
 }
 
 button{
-    width: 100px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    border-radius: 16px;
+}
+
+#range-container {
+    width: 640px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#range-input-grid-size {
+    width: 100%
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+#svg-icon {
+    fill: var(--background-color);
+}
+
+footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    color: var(--background-color);
 }
