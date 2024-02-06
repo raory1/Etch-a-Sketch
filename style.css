@@ -152,7 +152,7 @@ main{
 
 #options {
     position: absolute;
-    left: 25%;
+    left: 0;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -187,8 +187,8 @@ main{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 640px;
-    height: 640px;
+    width: 600px;
+    height: 600px;
     gap: 0px;
     box-shadow: var(--shadow);
 }
@@ -207,14 +207,29 @@ button{
 }
 
 #range-container {
-    width: 640px;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 #range-input-grid-size {
-    width: 100%
+    width: 600px;
+    height: 6px;
+    -webkit-appearance: none;
+    background-color: #757BA6;
+    border-radius: 6px;
+    outline: none;
+    margin-top: 40px;
+}
+
+#range-input-grid-size::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    box-shadow: var(--shadow)
 }
 
 footer {
