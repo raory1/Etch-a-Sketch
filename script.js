@@ -8,6 +8,7 @@ const btnProgressiveBlack = document.querySelector("#btn-progressive-black")
 const btnEraser = document.querySelector("#btn-eraser")
 const btnClear = document.querySelector("#btn-clear")
 const rangeGridSizeElement = document.querySelector("#range-input-grid-size")
+const gridSizeValueElement = document.querySelector("#grid-size-value")
 let gridSize = rangeGridSizeElement.value
 
 
@@ -47,6 +48,7 @@ function deleteGrids() {
 }
 
 function createGrids() {
+    console.log(gridSize)
     gridSize = (parseInt(rangeGridSizeElement.value))
     for (let i = 0; i<(gridSize*gridSize); i++){
         const grid = document.createElement("div");
@@ -60,13 +62,17 @@ function createGrids() {
 function updateItemSize() {
     deleteGrids()
     createGrids()
-
     rootElement.style.setProperty('--item-size', `calc(600px / ${gridSize})`);
 }
 
 createGrids()
 
 rangeGridSizeElement.addEventListener('mouseup', updateItemSize)
+
+rangeGridSizeElement.addEventListener('input', (event)=>{
+    gridSizeValueElement.innerHTML = `${event.target.value} x ${event.target.value}`
+})
+
 //change color
 let colorType = 0
 btnRgb.addEventListener('click', ()=>colorType = 0)
