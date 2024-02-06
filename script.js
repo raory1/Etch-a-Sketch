@@ -6,6 +6,11 @@ const btnBlack = document.querySelector("#btn-black")
 const btnProgressiveBlack = document.querySelector("#btn-progressive-black")
 const btnEraser = document.querySelector("#btn-eraser")
 const btnClear = document.querySelector("#btn-clear")
+const rangeGridSizeElement = document.querySelector("#grid-size")
+const rootElement = document.documentElement;
+let gridSize = 32
+
+
 randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 
 function paintRandomRGB() {
@@ -34,15 +39,27 @@ function clearScreen() {
     child.style.backgroundColor = "#FFFFFF"
 )}
 
-for (let i = 0; i<4096; i++){
-    const grid = document.createElement("div");
-    grid.className = "grid-item";
-    parent.appendChild(grid);
+// ?
+function updateItemSize() {
+    document.querySelectorAll(".grid-item").forEach((child) => {
+        parent.removeChild(child)
+    })
+
+    gridSize = (parseInt(rangeGridSizeElement.value))
+    for (let i = 0; i<(gridSize*gridSize); i++){
+        const grid = document.createElement("div");
+        grid.className = "grid-item";
+        parent.appendChild(grid);
+    } 
+    document.querySelectorAll(".grid-item").forEach((child) =>
+    child.addEventListener("mouseover", () => changeColor(child)))
+    rootElement.style.setProperty('--item-size', `calc(640px / ${gridSize})`);
+    console.log(gridItemSize)
 }
 
-document.querySelectorAll(".grid-item").forEach((child) =>
-    child.addEventListener("mouseover", () => changeColor(child)))
 
+
+rangeGridSizeElement.addEventListener('mouseup', updateItemSize)
 //change color
 let colorType = 0
 btnRgb.addEventListener('click', ()=>colorType = 0)
@@ -52,6 +69,7 @@ btnProgressiveBlack.addEventListener('click', ()=> {
 btnBlack.addEventListener('click', ()=>colorType = 2)
 btnEraser.addEventListener('click', ()=>colorType = 3)
 btnClear.addEventListener('click', ()=>this.clearScreen())
+
 function changeColor(child) {
     if(colorType == 0)
         child.style.backgroundColor = paintRandomRGB();
@@ -62,3 +80,4 @@ function changeColor(child) {
     else if(colorType == 3)
         child.style.backgroundColor = eraser();
 }
+
