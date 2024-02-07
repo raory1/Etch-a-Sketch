@@ -150,11 +150,34 @@ main{
     width: 100vh;
 }
 
-#options {
+.tools-container{
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#color-picker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0,0);
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#color-picker::-webkit-color-swatch{
+    border-radius: 50%;
+}
+#options {
     display: flex;
     flex-direction: column;
     align-items: center;
