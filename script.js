@@ -9,8 +9,8 @@ const btnEraser = document.querySelector("#btn-eraser")
 const btnClear = document.querySelector("#btn-clear")
 const rangeGridSizeElement = document.querySelector("#range-input-grid-size")
 const gridSizeValueElement = document.querySelector("#grid-size-value")
+const colorPickerElement = document.querySelector("#color-picker")
 let gridSize = rangeGridSizeElement.value
-
 
 randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 
@@ -68,7 +68,6 @@ function updateItemSize() {
 createGrids()
 
 rangeGridSizeElement.addEventListener('mouseup', updateItemSize)
-
 rangeGridSizeElement.addEventListener('input', (event)=>{
     gridSizeValueElement.innerHTML = `${event.target.value} x ${event.target.value}`
 })
@@ -82,6 +81,10 @@ btnProgressiveBlack.addEventListener('click', ()=> {
 btnBlack.addEventListener('click', ()=>colorType = 2)
 btnEraser.addEventListener('click', ()=>colorType = 3)
 btnClear.addEventListener('click', ()=>this.clearScreen())
+colorPickerElement.addEventListener('input', (event)=>{
+    colorHex = event.target.value
+    colorType = 4
+})
 
 function changeColor(child) {
     if(colorType == 0)
@@ -92,5 +95,7 @@ function changeColor(child) {
         child.style.backgroundColor = paintBlack();
     else if(colorType == 3)
         child.style.backgroundColor = eraser();
+    else if(colorType == 4)
+        child.style.backgroundColor = colorHex
 }
 
