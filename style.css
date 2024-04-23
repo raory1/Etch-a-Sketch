@@ -32,7 +32,6 @@ time, mark, audio, video {
 body{
     font-family: 'Poppins', sans-serif;
     background-color: var(--background-color);
-    background-image: url('./assets/girl2.png');
     background-repeat: no-repeat;
     background-position: top right;
     transition: all .5s ease-in-out;
