@@ -144,6 +144,7 @@ main{
 }
 #game-container {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     gap: 24px;
@@ -177,6 +178,7 @@ main{
 #color-picker::-webkit-color-swatch{
     border-radius: 50%;
 }
+
 #options {
     display: flex;
     flex-direction: column;
