@@ -32,7 +32,6 @@ time, mark, audio, video {
 body{
     font-family: 'Poppins', sans-serif;
     background-color: var(--background-color);
-    background-image: url('./assets/girl2.png');
     background-repeat: no-repeat;
     background-position: top right;
     transition: all .5s ease-in-out;
@@ -144,6 +143,7 @@ main{
 }
 #game-container {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     gap: 24px;
@@ -177,6 +177,7 @@ main{
 #color-picker::-webkit-color-swatch{
     border-radius: 50%;
 }
+
 #options {
     display: flex;
     flex-direction: column;
